@@ -2,9 +2,9 @@ import Link from 'next/link'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-export default function NotFound() {
+const NotFound = () => {
   const router = useRouter()
-  
+
   useEffect(() => {
     setTimeout(() => {
       router.push('/')
@@ -14,8 +14,8 @@ export default function NotFound() {
   return (
     <div className="not-found">
       <h1>404</h1>
-      <h2>Ooops! That page cannot be found :(</h2>
-      <p>Redirecting to the <Link href="/">Homepage</Link> for more marmite goodness...</p>
+      <h2>Oops! That page cannot be found :(</h2>
+      <p>Redirecting to <Link href="/"><a>Homepage</a></Link> for more marmite goodness...</p>
 
       <style jsx>{`
         .not-found {
@@ -29,7 +29,7 @@ export default function NotFound() {
         }
       `}</style>
     </div>
-  )
+  );
 }
-
-export default NotFound
+ 
+export default NotFound;
